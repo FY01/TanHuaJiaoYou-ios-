@@ -1,0 +1,6 @@
+module Pods_TanHuaJiaoYou {
+  umbrella header "Pods-TanHuaJiaoYou-umbrella.h"
+
+  export *
+  module * { export * }
+}
