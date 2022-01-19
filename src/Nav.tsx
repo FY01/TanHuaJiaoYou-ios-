@@ -5,7 +5,7 @@
  * @Author: FY01
  * @Date: 2022-01-19 21:39:17
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-19 21:53:10
+ * @LastEditTime: 2022-01-19 22:02:31
  */
 // In App.js in a new project
 
@@ -39,7 +39,7 @@ export default class nav extends Component {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{headerShown: false}}
-          initialRouteName="Home">
+          initialRouteName="Login">
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
