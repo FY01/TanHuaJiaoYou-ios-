@@ -1,3 +1,13 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @@Company:
+ * @Author: FY01
+ * @Date: 2022-01-19 20:49:30
+ * @LastEditors:
+ * @LastEditTime: 2022-01-19 21:14:22
+ */
+import android.os.Bundle;
 package com.tanhuajiaoyou;
 
 import com.facebook.react.ReactActivity;
@@ -11,5 +21,10 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "TanHuaJiaoYou";
+  }
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 }
