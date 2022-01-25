@@ -1,18 +1,27 @@
 import Toast from 'react-native-root-toast';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-let toastObj: {id: string; manager: {}} = {id: '', manager: {}};
-const toast = {
-  // You can manually hide the Toast, or it will automatically disappear after a `duration` ms timeout.
-  show: (text: string): void => {
-    toastObj = Toast.show(text, {
+interface ToastType {
+  toastObj: {id: string; manager: {}};
+  show: Function;
+  hide: Function;
+}
+
+type PType = 'center' | 'top' | 'bottom';
+export default class toast<ToastType> {
+  toastObj: {id: string; manager: {}} = {id: '', manager: {}};
+  show(text: string, positions: PType = 'center'): void {
+    this.toastObj = Toast.show(text, {
       duration: Toast.durations.LONG,
-      position: Toast.positions.CENTER,
+      position:
+        positions === 'center'
+          ? Toast.positions.CENTER
+          : positions === 'top'
+          ? Toast.positions.TOP
+          : Toast.positions.BOTTOM,
     });
-  },
-
-  hide: (toastObject = toastObj): void => {
+  }
+  hide(toastObject = this.toastObj): void {
     Toast.hide(toastObject);
-  },
-};
-
-export default toast;
+  }
+}
