@@ -1,71 +1,12 @@
-/*
- * @Descripttion:
- * @version:
- * @@Company:
- * @Author: FY01
- * @Date: 2022-01-21 16:52:28
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-22 14:26:15
- */
-import React, {useState} from 'react';
-import {SafeAreaView, Text, StyleSheet} from 'react-native';
+import {Text, View} from 'react-native';
+import React, {Component} from 'react';
 
-import {
-  CodeField,
-  Cursor,
-  useBlurOnFulfill,
-  useClearByFocusCell,
-} from 'react-native-confirmation-code-field';
-
-const styles = StyleSheet.create({
-  root: {flex: 1, padding: 20},
-  title: {textAlign: 'center', fontSize: 30},
-  codeFieldRoot: {marginTop: 20},
-  cell: {
-    width: 40,
-    height: 40,
-    lineHeight: 38,
-    fontSize: 24,
-    borderWidth: 2,
-    borderColor: '#00000030',
-    textAlign: 'center',
-  },
-  focusCell: {
-    borderColor: '#4c669f',
-  },
-});
-
-const CELL_COUNT = 6;
-
-const Demo = () => {
-  const [value, setValue] = useState('');
-  const [props, getCellOnLayoutHandler] = useClearByFocusCell({
-    value,
-    setValue,
-  });
-
-  return (
-    <SafeAreaView style={styles.root}>
-      <CodeField
-        {...props}
-        // Use `caretHidden={false}` when users can't paste a text value, because context menu doesn't appear
-        value={value}
-        onChangeText={setValue}
-        cellCount={CELL_COUNT}
-        rootStyle={styles.codeFieldRoot}
-        keyboardType="number-pad"
-        textContentType="oneTimeCode"
-        renderCell={({index, symbol, isFocused}) => (
-          <Text
-            key={index}
-            style={[styles.cell, isFocused && styles.focusCell]}
-            onLayout={getCellOnLayoutHandler(index)}>
-            {symbol || (isFocused ? <Cursor /> : null)}
-          </Text>
-        )}
-      />
-    </SafeAreaView>
-  );
-};
-
-export default Demo;
+export default class Demo extends Component {
+  render() {
+    return (
+      <View>
+        <Text></Text>
+      </View>
+    );
+  }
+}

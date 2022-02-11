@@ -14,6 +14,8 @@
 		6172F2D35A4C3AA820D92908 /* libPods-TanHuaJiaoYou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-TanHuaJiaoYou.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-TanHuaJiaoYou-TanHuaJiaoYouTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-TanHuaJiaoYou-TanHuaJiaoYouTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E3ED871727A3CD970099BC66 /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ED871627A3CD970099BC66 /* AMapLocationKit.framework */; };
+		E3ED871927A3CDA70099BC66 /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ED871827A3CDA70099BC66 /* AMapFoundationKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		ABFE59519B596E51CEFDCCC0 /* libPods-TanHuaJiaoYou-TanHuaJiaoYouTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TanHuaJiaoYou-TanHuaJiaoYouTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-TanHuaJiaoYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TanHuaJiaoYou.debug.xcconfig"; path = "Target Support Files/Pods-TanHuaJiaoYou/Pods-TanHuaJiaoYou.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-TanHuaJiaoYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TanHuaJiaoYou.release.xcconfig"; path = "Target Support Files/Pods-TanHuaJiaoYou/Pods-TanHuaJiaoYou.release.xcconfig"; sourceTree = "<group>"; };
+		E3ED871627A3CD970099BC66 /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapLocationKit.framework; path = ../../../../Downloads/AMapLocationKit.framework; sourceTree = "<group>"; };
+		E3ED871827A3CDA70099BC66 /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapFoundationKit.framework; path = ../../../../Downloads/AMapFoundationKit.framework; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6172F2D35A4C3AA820D92908 /* libPods-TanHuaJiaoYou.a in Frameworks */,
+				E3ED871927A3CDA70099BC66 /* AMapFoundationKit.framework in Frameworks */,
+				E3ED871727A3CD970099BC66 /* AMapLocationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +115,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E3ED871827A3CDA70099BC66 /* AMapFoundationKit.framework */,
+				E3ED871627A3CD970099BC66 /* AMapLocationKit.framework */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -143,7 +151,6 @@
 			children = (
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
@@ -154,7 +161,6 @@
 				6C97AB639B58BBB4B15BBE30 /* Pods-TanHuaJiaoYou-TanHuaJiaoYouTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-TanHuaJiaoYou-TanHuaJiaoYouTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
