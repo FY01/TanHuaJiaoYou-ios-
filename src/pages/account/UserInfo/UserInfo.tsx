@@ -5,7 +5,7 @@
  * @Author: FY01
  * @Date: 2022-01-23 16:46:47
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-30 13:39:03
+ * @LastEditTime: 2022-02-14 14:52:00
  */
 import {
   Text,
@@ -25,6 +25,9 @@ import DatePicker from 'react-native-date-picker';
 import Picker from 'react-native-picker';
 import moment from 'moment';
 import Geo from '../../../utils/geolocation';
+import CityJson from '../../../res/citys.json';
+import MyButton from '../../../components/MyButton';
+import toast from '../../../utils/Toast';
 
 enum Gender {
   Male,
@@ -74,22 +77,39 @@ export default class UserInfo extends Component {
   // show city picker
   showCityPicker = (): void => {
     Picker.init({
-      pickerData: ['北京', '上海', '广州', '深圳'],
+      pickerData: CityJson,
+      selectedValue: ['广东', '深圳', '南山区'],
       pickerTitleText: '请选择城市',
       pickerConfirmBtnText: '确认',
       pickerCancelBtnText: '取消',
-      selectedValue: ['上海'],
       onPickerConfirm: data => {
-        console.log(data);
+        // data=['广东', '深圳', '南山区']
+        this.setState({city: data[1]});
       },
-      onPickerCancel: data => {
-        console.log(data);
-      },
-      onPickerSelect: data => {
-        console.log(data);
-      },
+      // onPickerCancel: data => {
+      //   console.log(data);
+      // },
+      // onPickerSelect: data => {
+      //   console.log(data);
+      // },
     });
     Picker.show();
+  };
+
+  // pick user avatar
+  pickAvatarImg = (): void => {
+    // 1.校验 nickname,birthday,city,
+    // 2.使用图片裁剪工具
+    // 3.将图片上传至后台
+    // 4.将state中的数据上传至后台，完善用户信息
+    // 5.成功。1.执行极光注册，登陆（极光：网络聊天通信服务商）2.跳转到交友首页
+
+    const {nickname, birthday, city} = this.state;
+    if (!nickname || !birthday || !city) {
+      const t = new toast();
+      t.show('用户名称、生日、地址不能为空');
+      return;
+    }
   };
 
   async componentDidMount() {
@@ -105,7 +125,7 @@ export default class UserInfo extends Component {
     const lat = result.regeocode.addressComponent.streetNumber.location.split(
       ',',
     )[1];
-    this.setState({address, city, lng, lat});
+    this.setState({address, city: '深圳', lng, lat});
   }
   render() {
     const {gender, nickname, open, birthday, date, city} = this.state;
@@ -194,12 +214,21 @@ export default class UserInfo extends Component {
           />
         </View>
         {/* 4.0 location */}
-        <View>
+        <View style={{marginTop: pxToDp(10)}}>
           <Input
             autoCompleteType={false}
             onPressIn={this.showCityPicker}
             disabled={true}
             value={`当前在：${city}`}></Input>
+        </View>
+        {/* 5.0 pick avatar */}
+        <View>
+          <Pressable
+            onPress={() => {
+              this.pickAvatarImg();
+            }}>
+            <MyButton style={styles.pickAvatarButton}>选择头像</MyButton>
+          </Pressable>
         </View>
       </View>
     );
@@ -230,5 +259,10 @@ const styles = StyleSheet.create({
     borderRadius: pxToDp(30),
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  pickAvatarButton: {
+    height: pxToDp(40),
+    borderRadius: pxToDp(20),
+    alignSelf: 'center',
   },
 });

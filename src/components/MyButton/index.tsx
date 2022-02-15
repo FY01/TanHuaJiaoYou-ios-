@@ -5,7 +5,7 @@
  * @Author: FY01
  * @Date: 2022-01-21 14:03:29
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-21 14:55:19
+ * @LastEditTime: 2022-02-14 14:10:46
  */
 import {Text, View, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
